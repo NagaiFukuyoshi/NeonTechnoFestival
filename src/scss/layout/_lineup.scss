@@ -1,0 +1,78 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.lineup{
+    width: 900px;
+    max-width: 80%;
+    margin: auto;
+    padding-top: 6rem;
+    border-bottom: 1px solid v.$fuenteprincipal;
+    h2{
+        text-align: center;
+        margin: -1rem 0 2rem 0;
+        font-size: 3rem;
+        font-weight: bold;
+        color: v.$fuenteprincipal;
+    }
+    h3{
+        text-align: center;
+        font-size: 2rem;
+        color: v.$fuenteprincipal;
+    }
+}
+
+.eventos{
+    
+    .eventos__primer,
+    .eventos__segundo{
+        display: flex;
+        justify-content: space-between;
+        gap: 6rem;
+        @include m.tablet{
+            gap: 3rem;
+        }
+        @include m.telefono{
+            flex-direction: column;
+            gap: 0;
+        }
+        li{
+            font-weight: bold;
+            padding: 0 2rem;
+            span{
+                font-weight: normal;
+            }
+        }
+    }
+
+    .eventos__technos,
+    .eventos__edm{
+        width: 100%;
+        margin: 2rem 0;
+        line-height: 3;
+        h4{
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        ul{
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.eventos__technos{
+background-color: v.$techno;
+}
+
+.eventos__edm{
+    background-color: v.$emd;
+}
+
+.amarillo--dark{
+    background-color: v.$technodark;
+}
+
+.azul--dark{
+    background-color: v.$emddark;
+}

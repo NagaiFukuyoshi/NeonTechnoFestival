@@ -1,0 +1,84 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.navegacion{
+    background-color: v.$fuenteprincipal;
+    width: 100%;
+    margin: -1rem 0;
+
+    h1, a{
+        color: v.$fuentesecundaria;
+    }
+
+    &.fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+    
+    @include m.telefono{
+        position: relative;
+        }
+    }
+}
+
+.navegacion__contenedor{
+    display: flex;
+    width: 900px;
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    @include m.telefono{
+        flex-direction: column;
+        width: 100%;
+
+        h1{
+            text-align: center;
+        }
+    }
+
+    @include m.tablet{
+        a{
+            font-size: 1.3rem;
+        }
+
+        h1{
+            text-align: center;
+        }
+    }
+
+    @include m.desktop{
+        a{
+            font-size: 1.5rem;
+        }
+    }
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+
+    @include m.tablet{
+        width: 40%;
+    }
+
+    @include m.telefono{
+        width: 100%;
+        flex-direction: column;
+        row-gap: 1rem;
+        padding-bottom: 1rem;
+
+        a:hover{
+            border-bottom: 1px solid v.$hover;
+        }
+    }
+
+        a:hover,
+        .active{
+            color:v.$hover;
+        }
+}

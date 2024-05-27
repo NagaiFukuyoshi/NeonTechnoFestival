@@ -1,0 +1,68 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.contenedor{
+    position: relative;
+    min-height: 30rem;
+    max-height: 50rem;
+    overflow: hidden;
+
+    
+    @include m.telefono{
+        min-height: 20rem;
+        max-height: 40rem;
+    }
+
+    .contenedor__info{
+        position: absolute;
+        color: v.$fuenteprincipal;
+        inset: 0;
+        background: linear-gradient(
+            270deg,
+            rgba(v.$degradado1, 50%),
+            rgba(darken(v.$degradado1, 20%), 80%)
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    video{
+        display: block;
+        width: 100%;
+    }
+}
+
+.contenedor__info{
+
+    h2{
+        font-size: 6rem;
+    }
+
+    p{
+        font-size: 3rem;
+    }
+
+    @include m.telefono{
+        text-align: center;
+
+            h2{
+                font-size: 4rem;
+            }
+
+            p{
+                font-size: 2rem;
+            }
+    }
+
+    @include m.tablet{
+        h2{
+            font-size: 4rem;
+        }
+
+        p{
+            font-size: 2rem;
+        }
+    }
+}

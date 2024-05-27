@@ -1,0 +1,81 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.boletos{
+    width: 900px;
+    max-width: 80%;
+    margin: auto;
+    padding-top: 5rem;
+    h2{
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: v.$fuenteprincipal
+    }
+}
+
+.contenedor__boletos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: v.$fondoprincipal;
+    gap: 6rem;
+    margin: 2rem 0;
+    line-height: 3;
+
+    @include m.tablet{
+        gap:2rem;
+        line-height: 4;
+    }
+
+    @include m.telefono{
+        grid-template-columns: 1fr;
+    }
+
+    h3{
+        text-align: center;
+        font-size: 2rem;
+        color: v.$fuenteprincipal;
+        padding-bottom: 3.2rem;
+    }
+
+    h4{
+        text-align: center;
+        font-size: 1.8rem;
+        background-color: brown;
+    }
+}
+
+.boletos__1dia,
+.boletos__2dias{
+    background-color: v.$fuentenav;
+    li{
+        border-bottom: 1px solid v.$border;
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+    }
+    .button{
+        display: flex;
+        justify-content: center;
+        button{
+            @include m.button
+        }
+    }
+
+    .dia{
+        background-color: v.$fondoprincipal;
+        padding: 1rem 0;
+    }
+
+    h4{
+        text-transform: uppercase;
+        padding: 1.2rem 0;
+    }
+}
+
+.boletos__1dia{
+    height:87%;
+
+    @include m.telefono{
+        height: 100%;
+    }
+}

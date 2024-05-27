@@ -1,0 +1,12 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+footer{
+    background-color: v.$fuenteprincipal;
+    text-align: center;
+    padding: 3rem 0;
+
+    h3{
+        font-size: 2rem;
+    }
+}

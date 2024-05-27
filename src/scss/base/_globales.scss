@@ -1,0 +1,46 @@
+@use 'variables' as v;
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+body{
+    background-color: v.$fondoprincipal;
+
+    &.overflow-hidden{
+        overflow: hidden;
+    }
+}
+
+h1{
+    color: v.$fuenteprincipal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+}
+
+a{
+    text-decoration: none;
+    color: v.$fuentenav;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+p{
+    line-height: 1.3;
+}
+
+li{
+    list-style: none;
+}

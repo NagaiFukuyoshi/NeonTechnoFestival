@@ -1,0 +1,79 @@
+@use 'base/variables' as v;
+@use 'base/mixin' as m;
+
+.galeria{
+    width: 900px;
+    max-width: 80%;
+    margin: auto;
+    padding: 7rem 0 2rem 0;
+    border-bottom: 1px solid v.$fuenteprincipal;
+    &__imagenes{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+
+        @include m.telefono{
+            grid-template-columns: 1fr;
+        }
+
+        @include m.tablet{
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include m.desktop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    h3{
+        text-align: center;
+        color: v.$fuenteprincipal;
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 4rem;
+    }
+
+    img{
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        cursor: pointer;
+    }
+}
+
+.modal{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(v.$fuentesecundaria, $alpha: .7);
+    display: grid;
+    place-items: center;
+    animation: fadeIn ease-in .5s;
+
+    &.fade--out{
+        animation: fadeOut ease-in .6s;
+    }
+
+    img{
+        max-width: 65%;
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}

@@ -1,0 +1,52 @@
+@use 'variables' as v;
+
+@mixin telefono{
+    @media (max-width: v.$telefono){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (min-width: v.$telefono) and (max-width: v.$tablet){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media (min-width: v.$tablet) and (max-width: v.$desktop){
+        @content;
+    }
+}
+
+@mixin desktopxl{
+    @media (min-width: v.$desktopxl){
+        @content;
+    }
+}
+
+@mixin button{
+    padding: 1.2rem 0;
+    width: 50%;
+    border-radius: .5rem;
+    border: none;
+    background-color: blueviolet;
+    color: v.$fuentenav;
+    font-weight: 900;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: .4s;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+@mixin barraFija{
+    .fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        }
+}
